@@ -1,0 +1,16 @@
+graph diretorio {
+
+
+    Raiz -- Download;
+
+    Download -- Documentos;
+    Download -- Filmes;
+    Download -- Jogos;
+
+    Documentos -- Pessoais;
+    Documentos -- Gerais;
+
+    Filmes -- Documentarios;
+    Filmes -- Terror; 
+
+}

@@ -1,0 +1,10 @@
+graph trila_de_conhecimento {
+    FrontEnd [label="Tecnologias de FrontEnd"];
+     FrontEnd  -- Html;
+     FrontEnd  -- CSS;
+     FrontEnd  -- Framework;
+    Framework -- BootStrap;
+    Framework -- Tailwind;
+     
+
+}

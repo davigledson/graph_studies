@@ -1,0 +1,9 @@
+graph rede {
+ Servidor -- Switch
+ Switch -- Roteador
+ Switch -- Computador
+ Switch -- Computador1
+ Roteador -- Celular1
+ Roteador -- Celular2
+ Roteador -- Notebook
+}

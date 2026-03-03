@@ -1,0 +1,13 @@
+digraph user_flow {
+
+    
+    rankdir=LR;
+
+    Usuario -> Login;
+    Login -> Dashboard;
+    Dashboard -> Perfil;
+    Dashboard -> Configuracoes;
+    Perfil -> Logout;
+    Configuracoes -> Logout;
+
+}
