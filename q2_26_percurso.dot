@@ -1,0 +1,12 @@
+graph Percurso {
+
+    edge [penwidth=2];
+
+    // Percurso destacado
+    A -- B;
+    B -- C;
+    C -- D;
+
+  
+   
+}

@@ -1,0 +1,18 @@
+graph GrafoDirecionado {
+
+    
+
+    C [label="C\n Grau 4"];
+    A [label="A\nGrau 3"];
+    B [label="B\n Grau 2"];
+    D [label="D\n Grau 2"];
+    E [label="E\n Grau 2"];
+
+    C -- A;
+    C -- B;
+    C -- D;
+    C -- E;
+
+    A -- B ;
+    D -- E ;
+}

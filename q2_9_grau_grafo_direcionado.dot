@@ -1,0 +1,18 @@
+digraph GrafoDirecionado {
+
+    
+
+    C [label="C\n Grau 4"];
+    A [label="A\nGrau 1"];
+    B [label="B\n Grau 0"];
+    D [label="D\n Grau 1"];
+    E [label="E\n Grau 1"];
+
+    C -> A [color=red];
+    C -> B [color=red];
+    C -> D [color=red];
+    C -> E [color=red];
+
+    A -> B [color=blue];
+    D -> E [color=blue];
+}

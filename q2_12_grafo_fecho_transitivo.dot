@@ -1,0 +1,10 @@
+digraph G {
+A -> B
+B -> C
+C -> D
+
+// Fecho transitivo (aresta em vermelho)
+A -> C [style=dashed, color=red]
+A -> D [style=dashed, color=red]
+B-> D [style=dashed, color=red]
+}

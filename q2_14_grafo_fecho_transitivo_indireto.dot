@@ -1,0 +1,14 @@
+digraph G {
+
+
+
+
+A -> B 
+B -> C 
+C -> D 
+
+//Fecho transitivo indireto de D
+A [style=filled,fillcolor=aquamarine]
+B  [style=filled,fillcolor=aquamarine]
+C [style=filled,fillcolor=aquamarine]
+}

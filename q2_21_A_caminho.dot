@@ -1,0 +1,9 @@
+graph Caminho {
+
+    A -- B;
+    B -- C;
+    C -- D;
+    D -- E;
+    E -- A;
+
+}

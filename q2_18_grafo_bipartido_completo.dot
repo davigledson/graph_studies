@@ -1,0 +1,25 @@
+graph G {
+
+//Conjunto A
+A [style=filled,fillcolor=aquamarine]
+B [style=filled,fillcolor=aquamarine]
+C [style=filled,fillcolor=aquamarine]
+
+//Conjunto B
+1 [style=filled,fillcolor=lightcoral]
+2 [style=filled,fillcolor=lightcoral]
+3 [style=filled,fillcolor=lightcoral]
+
+
+
+    A -- 1;
+    A -- 2;
+    A -- 3;
+    B -- 1;
+    B -- 2;
+    B -- 3;
+    C -- 1;
+    C -- 2;
+    C -- 3;
+
+}

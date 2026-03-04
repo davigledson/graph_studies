@@ -1,0 +1,16 @@
+digraph TrilhaDirecionada {
+
+    edge [penwidth=2];
+
+    // Trilha destacada
+    A -> B [color=red];
+    B -> C [color=red];
+    C -> D [color=red];
+    D -> B [color=red];
+    B -> E [color=red];
+    A→B→C→D→B→E
+    
+    // Aresta extra não utilizada
+   
+    C -> E [color=gray];
+}

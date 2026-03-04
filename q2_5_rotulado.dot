@@ -1,0 +1,11 @@
+digraph G {
+       
+ Mossoro -> Barauna [label="36 km"];
+ Fortaleza -> Upanema [label="55.1 km"];
+ Natal -> Tibal [label="44.1 km"];
+ Recife -> Apodi [label="78.6 km"];
+
+ 
+
+    
+}

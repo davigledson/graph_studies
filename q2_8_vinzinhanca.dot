@@ -1,0 +1,18 @@
+graph G {
+A [style=filled,fillcolor=lawngreen]
+B [style=filled,fillcolor=aquamarine]
+C [style=filled,fillcolor=aquamarine]
+
+D [style=filled,fillcolor=yellow]
+E [style=filled,fillcolor=yellow]
+
+A -- B 
+A -- C   
+
+B -- D
+B -- E
+ 
+ 
+
+    
+}

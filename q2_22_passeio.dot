@@ -1,0 +1,14 @@
+digraph PasseioDirecionado {
+
+    edge [penwidth=2];
+
+    // Passeio destacado
+    A -> B ;
+    B -> C ;
+    C -> B ;
+    B -> D ;
+    D -> A ;
+
+    // Aresta extra não utilizada no passeio
+    C -> D [color=gray];
+}

@@ -1,0 +1,13 @@
+graph Circuito {
+
+    
+
+    // Circuito destacado
+    A -- B;
+    B -- C;
+    C -- D;
+    D -- A;
+
+    // Aresta extra que sobrou do circuito
+    B -- D [color=gray];
+}

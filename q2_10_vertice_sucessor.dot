@@ -1,0 +1,12 @@
+digraph G {
+
+A [style=filled,fillcolor=aqua]
+B [style=filled,fillcolor=aquamarine]
+C [style=filled,fillcolor=aquamarine]
+
+
+D-> A
+E -> A
+A -> B
+A -> C
+}
