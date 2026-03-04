@@ -1,0 +1,15 @@
+graph CircuitoHamiltoniano {
+
+    // Circuito Hamiltoniano
+    A -- B [color=red];
+    B -- C [color=red];
+    C -- D [color=red];
+    D -- E [color=red];
+    E -- F [color=red];
+    F -- A [color=red];
+
+    // Arestas extras que não fazem parte do circuito
+    A -- C [color=gray];
+    B -- D [color=gray];
+    C -- E [color=gray];
+}

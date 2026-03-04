@@ -1,0 +1,15 @@
+graph CicloHamiltoniano {
+
+   
+
+    // Ciclo Hamiltoniano destacado
+    A -- B [color=red];
+    B -- C [color=red];
+    C -- D [color=red];
+    D -- E [color=red];
+    E -- A [color=red];
+
+    // Arestas extras (não usadas no ciclo)
+    A -- C [color=gray];
+    B -- D [color=gray];
+}

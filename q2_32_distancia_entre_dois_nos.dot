@@ -1,0 +1,11 @@
+graph G {
+  
+    A -- C;
+    C -- D;
+    D -- E;
+    A -- D;
+
+    // Destacando o caminho mais curto de A para E
+    A -- B [color=red, penwidth=2];
+    B -- E [color=red, penwidth=2];
+}

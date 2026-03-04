@@ -1,0 +1,18 @@
+graph Excentricidade {
+   A [style=filled,fillcolor=white,label="A\n Excentricidade 3"]
+   B [style=filled,fillcolor=white,label="B\n Excentricidade 3"]
+   C [style=filled,fillcolor=white,label="C\n Excentricidade 2"]
+   D [style=filled,fillcolor=white,label="D\n Excentricidade 2"]
+   E [style=filled,fillcolor=white,label="E\n Excentricidade 3"]
+   F [style=filled,fillcolor=white,label="F\n Excentricidade 3"]
+
+    A -- B; 
+    A -- C;
+    B -- D;
+    C -- D;
+    C -- E;
+    D -- F;
+  
+
+
+}

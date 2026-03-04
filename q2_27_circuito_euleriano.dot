@@ -1,0 +1,10 @@
+graph CircuitoEuleriano {
+
+    edge [penwidth=2, color=red];
+
+    A -- B;
+    B -- C;
+    C -- D;
+    D -- E;
+    E -- A;
+}

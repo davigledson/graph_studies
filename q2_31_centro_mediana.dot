@@ -1,0 +1,15 @@
+graph G {
+
+
+    A -- B;
+    B -- C;
+    C -- D;
+    D -- E;
+    D -- F;
+
+    // Centro do grafo (menor excentricidade)
+    C [fillcolor=lightblue];
+
+    // Mediana (minima distancia somadas)
+    D [fillcolor=lightgreen];
+}

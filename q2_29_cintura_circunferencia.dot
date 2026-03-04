@@ -1,0 +1,15 @@
+graph ExemploCinturaCircunferencia {
+
+    
+
+    // Ciclo menor (3) → cintura
+    A -- B [color=red];
+    B -- C [color=red];
+    C -- A [color=red];
+
+    // Ciclo maior (5) → circunferência
+    C -- D [color=blue];
+    D -- E [color=blue];
+    E -- F [color=blue];
+    F -- A [color=blue];
+}

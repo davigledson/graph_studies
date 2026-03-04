@@ -1,0 +1,17 @@
+graph ExemploRaioDiametro {
+
+    
+    //maior distância mínima (diâmetro = 3)
+    B -- A [color=red];
+    A -- F [color=red];
+    F -- E [color=red];
+
+    // Restante do grafo
+    A -- C;
+    B -- C;
+    C -- D;
+    D -- E;
+
+    // Azul → vértice central (raio = 2)
+    A -- C [color=blue];
+}
