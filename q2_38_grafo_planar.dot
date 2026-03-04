@@ -1,0 +1,16 @@
+graph Planar {
+
+
+    // Arestas externas do pentágono
+    A -- B;
+    B -- C;
+    C -- D;
+    D -- E;
+    E -- A;
+
+    // Arestas internas (diagonais)
+    A -- C;
+    C -- E;
+    E -- B;
+    B -- D;
+}

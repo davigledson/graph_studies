@@ -1,0 +1,7 @@
+graph G {
+   
+    A -- B
+    B -- C
+    C -- D
+    D -- A
+}

@@ -1,0 +1,6 @@
+digraph Aciclico {
+   
+    A -> B
+    B -> C
+    B -> D
+}

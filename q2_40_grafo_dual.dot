@@ -1,0 +1,26 @@
+graph GrafoComDual {
+    A [style=filled, fillcolor=lightblue];
+    B [style=filled, fillcolor=lightblue];
+    C [style=filled, fillcolor=lightblue];
+    D [style=filled, fillcolor=lightblue];
+
+    A -- B;
+    B -- C;
+    C -- D;
+    D -- A;
+    A -- C; 
+
+   
+    C1 [style=filled, fillcolor=lightcoral, label="A1"];
+    B2 [style=filled, fillcolor=lightcoral, label="B2"];
+    C3 [style=filled, fillcolor=lightcoral, label="C3"];
+
+   
+    C1 -- B2 [color=red, penwidth=2]; 
+    C1 -- C3 [color=red, penwidth=2];
+    B2 -- C3 [color=red, penwidth=2]; 
+
+    // Posicionamento aproximado para visualização
+    { rank=same; A; C; }
+    { rank=same; B; D; }
+}

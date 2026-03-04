@@ -1,0 +1,13 @@
+graph G {
+
+A -- B
+A -- C
+B -- C
+C -- D
+
+    subgraph G1 {
+        a--b
+        a--c
+        b--c
+    }
+}
