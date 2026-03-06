@@ -1,0 +1,22 @@
+graph G {
+
+    rankdir=LR
+
+    subgraph cluster_grafo {
+        label="Grafo"
+
+        A -- B
+        A -- C
+        B -- C
+        C -- D
+    }
+
+    lista [shape=plaintext label=<
+    <table border="1" cellborder="1" cellspacing="0">
+        <tr><td>A</td><td>B, C</td></tr>
+        <tr><td>B</td><td>A, C</td></tr>
+        <tr><td>C</td><td>A, B, D</td></tr>
+        <tr><td>D</td><td>C</td></tr>
+    </table>
+    >];
+}

@@ -1,0 +1,33 @@
+graph Arvore {
+
+    A [label="Raiz"]
+    B [label="Filho 1"]
+    C [label="Filho 2"]
+
+    D [label="Folha 1"]
+    E [label="Folha 2"]
+    F [label="Folha 3"]
+    G [label="Folha 4"]
+
+    // árvore original
+    A -- B
+    A -- C
+    B -- D
+    B -- E
+    C -- F
+    C -- G
+
+    // subárvore destacada
+    subgraph cluster_subarvore {
+        label="Subárvore"
+        color=red
+        penwidth=2
+
+        A
+        B
+        D
+        E
+
+        
+    }
+}

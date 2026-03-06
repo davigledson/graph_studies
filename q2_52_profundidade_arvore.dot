@@ -1,0 +1,19 @@
+graph Arvore {
+
+    A [label="A (prof=0)", style=filled, fillcolor=lightblue]
+
+    B [label="B (prof=1)"]
+    C [label="C (prof=1)"]
+
+    D [label="D (prof=2)", style=filled, fillcolor=lightgreen]
+    E [label="E (prof=2)", style=filled, fillcolor=lightgreen]
+    F [label="F (prof=2)", style=filled, fillcolor=lightgreen]
+    G [label="G (prof=2)", style=filled, fillcolor=lightgreen]
+
+    A -- B
+    A -- C
+    B -- D
+    B -- E
+    C -- F
+    C -- G
+}

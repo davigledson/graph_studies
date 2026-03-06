@@ -1,0 +1,20 @@
+graph ArvoreBalanceada {
+
+
+    A [label="A\nRaiz"]
+
+    B [label="B\nFilho esquerdo"]
+    C [label="C\nFilho direito"]
+
+    D [label="D\nFolha (esq)"]
+    E [label="E\nFolha (dir)"]
+    F [label="F\nFolha (esq)"]
+    G [label="G\nFolha (dir)"]
+
+    A -- B
+    A -- C
+    B -- D
+    B -- E
+    C -- F
+    C -- G
+}

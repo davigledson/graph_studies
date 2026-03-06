@@ -1,0 +1,16 @@
+graph MST_Diametro {
+
+   //diametro <= 4
+    A -- B [label=1, color=red, penwidth=2]
+    A -- C [label=2, color=red, penwidth=2]
+    A -- D [label=2, color=red, penwidth=2]
+
+    B -- C [label=4]
+    B -- E [label=3, color=red, penwidth=2]
+
+    C -- F [label=5]
+
+    D -- E [label=6]
+    D -- F [label=3, color=red, penwidth=2]
+
+}

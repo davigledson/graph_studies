@@ -1,0 +1,33 @@
+graph G {
+
+    rankdir=LR
+
+    subgraph cluster_grafo {
+        label="Grafo"
+
+        A -- B [label="e1"]
+        A -- C [label="e2"]
+        B -- C [label="e3"]
+        C -- D [label="e4"]
+    }
+
+    matriz [shape=plaintext label=<
+    <table border="1" cellborder="1" cellspacing="0">
+        <tr>
+            <td></td><td>e1</td><td>e2</td><td>e3</td><td>e4</td>
+        </tr>
+        <tr>
+            <td>A</td><td>1</td><td>1</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td>B</td><td>1</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+            <td>C</td><td>0</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>D</td><td>0</td><td>0</td><td>0</td><td>1</td>
+        </tr>
+    </table>
+    >];
+}

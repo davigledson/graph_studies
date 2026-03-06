@@ -1,0 +1,11 @@
+graph Grafo {
+
+ //Grafo normal
+    A -- B
+    A -- C
+    B -- C
+    B -- D
+    C -- E
+    D -- E
+
+}

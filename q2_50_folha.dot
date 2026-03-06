@@ -1,0 +1,19 @@
+graph Arvore {
+
+    A [label="Raiz"]
+
+    B [label="Filho"]
+    C [label="Filho"]
+
+    D [label="Folha", style=filled, fillcolor=lightgreen]
+    E [label="Folha", style=filled, fillcolor=lightgreen]
+    F [label="Folha", style=filled, fillcolor=lightgreen]
+    G [label="Folha", style=filled, fillcolor=lightgreen]
+
+    A -- B
+    A -- C
+    B -- D
+    B -- E
+    C -- F
+    C -- G
+}

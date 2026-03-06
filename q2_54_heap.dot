@@ -1,0 +1,45 @@
+graph Heaps {
+
+    rankdir=TB
+
+    // Heap Máximo
+    subgraph cluster_heap_max {
+        label="Heap Maximo"
+
+        A -- B
+        A -- C
+        B -- D
+        B -- E
+        C -- F
+        C -- G
+
+        A [label="90"]
+        B [label="70"]
+        C [label="60"]
+        D [label="40"]
+        E [label="30"]
+        F [label="20"]
+        G [label="10"]
+    }
+
+    // Heap Mínimo
+    subgraph cluster_heap_min {
+        label="Heap Minimo"
+
+        H -- I
+        H -- J
+        I -- K
+        I -- L
+        J -- M
+        J -- N
+
+        H [label="10"]
+        I [label="20"]
+        J [label="30"]
+        K [label="40"]
+        L [label="50"]
+        M [label="60"]
+        N [label="70"]
+    }
+
+}

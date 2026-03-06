@@ -1,0 +1,10 @@
+graph ArvoreGeradora {
+
+ //Grafo arvore geradora
+
+    A -- B
+    A -- C
+    B -- D
+    C -- E
+
+}
