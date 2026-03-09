@@ -1,0 +1,500 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{graphs, graphdrawing, quotes}
+
+\geometry{
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=2cm
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small Teoria dos Grafos -- 1\textordmasculine{} Trabalho Didático}
+\lhead{\small UERN -- Ciência da Computação}
+\rfoot{\thepage}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+% Capa / Cabeçalho do trabalho
+\title{
+  \large \textbf{Universidade do Estado do Rio Grande do Norte}\\[0.3cm]
+  \large Curso de Ciência da Computação\\[0.3cm]
+  \large Disciplina: Teoria dos Grafos (Per.: 2026-1)\\[0.3cm]
+  \large Professor: Dario José Aloise\\[0.8cm]
+  \Large \textbf{1\textordmasculine{} Trabalho Didático da Disciplina para 1\textordfeminine{} Avaliação}\\[0.3cm]
+  \normalsize (Prazo de entrega via e-mail: xx/xx/2026)
+}
+\author{
+  Aluno: Davi Gledson \hspace{3cm} Nota: \underline{\hspace{3cm}}
+}
+\date{Março de 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\tableofcontents
+\newpage
+
+%=============================================================
+\section{Questão 1 -- Situações Práticas Representadas por Grafos}
+%=============================================================
+
+A seguir são apresentadas cinco situações práticas modeladas como grafos, incluindo uma relacionada à área de Ciência da Computação.
+
+%-------------------------------------------------------------
+\subsection{Situação 1 -- Rede de Dependências de Pacotes de Software (Área de Computação)}
+%-------------------------------------------------------------
+
+Em projetos de software, pacotes e bibliotecas possuem dependências entre si. Um grafo dirigido (dígrafo) representa essas relações: cada vértice é um pacote e cada aresta direcionada indica que o pacote de origem depende do pacote de destino.
+
+\begin{center}
+\begin{tikzpicture}[->, thick, node distance=2.2cm]
+  \node[circle, draw] (A) at (0,0)   {App};
+  \node[circle, draw] (B) at (3,1)   {LibA};
+  \node[circle, draw] (C) at (3,-1)  {LibB};
+  \node[circle, draw] (D) at (6,0)   {LibC};
+  \draw (A) -- (B);
+  \draw (A) -- (C);
+  \draw (B) -- (D);
+  \draw (C) -- (D);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Interpretação:} \textit{App} depende de \textit{LibA} e \textit{LibB}; ambas dependem de \textit{LibC}. Ao instalar \textit{App}, o gerenciador de pacotes realiza uma ordenação topológica desse grafo para instalar as dependências na ordem correta.
+
+%-------------------------------------------------------------
+\subsection{Situação 2 -- Mapa de Rotas de Transporte Público}
+%-------------------------------------------------------------
+
+As linhas de ônibus de uma cidade podem ser modeladas como um grafo ponderado não dirigido, onde os vértices são pontos de parada e as arestas representam trechos de rota com peso igual ao tempo de deslocamento (em minutos).
+
+\begin{center}
+\begin{tikzpicture}[thick, node distance=2.5cm]
+  \node[circle, draw] (T) at (0,0)   {Terminal};
+  \node[circle, draw] (C) at (3,1.5) {Centro};
+  \node[circle, draw] (H) at (3,-1.5){Hospital};
+  \node[circle, draw] (U) at (6,0)   {UERN};
+  \draw (T) -- node[above left]  {10} (C);
+  \draw (T) -- node[below left]  {15} (H);
+  \draw (C) -- node[above right] {8}  (U);
+  \draw (H) -- node[below right] {12} (U);
+  \draw (C) -- node[right]       {6}  (H);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Interpretação:} Algoritmos de menor caminho (ex.: Dijkstra) podem determinar a rota mais rápida entre dois pontos da cidade.
+
+%-------------------------------------------------------------
+\subsection{Situação 3 -- Rede Social de Amizades}
+%-------------------------------------------------------------
+
+Em uma rede social, usuários são vértices e a relação de amizade (mútua) é representada por arestas não dirigidas.
+
+\begin{center}
+\begin{tikzpicture}[thick]
+  \node[circle, draw] (A) at (0,1.5)  {Ana};
+  \node[circle, draw] (B) at (2.5,3)  {Bruno};
+  \node[circle, draw] (C) at (5,1.5)  {Carla};
+  \node[circle, draw] (D) at (2.5,0)  {Diego};
+  \draw (A) -- (B);
+  \draw (B) -- (C);
+  \draw (A) -- (D);
+  \draw (C) -- (D);
+  \draw (B) -- (D);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Interpretação:} Métricas como centralidade e grau dos vértices identificam usuários mais influentes na rede.
+
+%-------------------------------------------------------------
+\subsection{Situação 4 -- Escalonamento de Tarefas com Precedência}
+%-------------------------------------------------------------
+
+Em um projeto de engenharia, tarefas precisam ser executadas em uma ordem determinada por relações de precedência, modeladas por um dígrafo acíclico (DAG).
+
+\begin{center}
+\begin{tikzpicture}[->, thick]
+  \node[circle, draw] (T1) at (0,0)   {T1};
+  \node[circle, draw] (T2) at (2,1)   {T2};
+  \node[circle, draw] (T3) at (2,-1)  {T3};
+  \node[circle, draw] (T4) at (4,1)   {T4};
+  \node[circle, draw] (T5) at (4,-1)  {T5};
+  \node[circle, draw] (T6) at (6,0)   {T6};
+  \draw (T1) -- (T2);
+  \draw (T1) -- (T3);
+  \draw (T2) -- (T4);
+  \draw (T3) -- (T5);
+  \draw (T4) -- (T6);
+  \draw (T5) -- (T6);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Interpretação:} A ordenação topológica do grafo fornece uma sequência válida de execução das tarefas.
+
+%-------------------------------------------------------------
+\subsection{Situação 5 -- Coloração de Mapa (Regiões Fronteiriças)}
+%-------------------------------------------------------------
+
+Países ou estados que compartilham fronteira não podem receber a mesma cor em um mapa. Isso é modelado como um problema de coloração de grafos: vértices são regiões e arestas ligam regiões vizinhas.
+
+\begin{center}
+\begin{tikzpicture}[thick]
+  \node[circle, draw, fill=blue!20]  (RN) at (3,3)   {RN};
+  \node[circle, draw, fill=red!20]   (CE) at (1,1.5) {CE};
+  \node[circle, draw, fill=green!20] (PB) at (5,1.5) {PB};
+  \node[circle, draw, fill=red!20]   (PE) at (3,0)   {PE};
+  \draw (RN) -- (CE);
+  \draw (RN) -- (PB);
+  \draw (CE) -- (PE);
+  \draw (PB) -- (PE);
+  \draw (CE) -- (PB);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Interpretação:} O teorema das quatro cores garante que qualquer mapa planar pode ser colorido com no máximo 4 cores, de forma que regiões adjacentes tenham cores diferentes.
+
+\newpage
+
+%=============================================================
+\section{Questão 2 -- Definições e Exemplos dos Conceitos}
+%=============================================================
+
+\noindent\textbf{Nota:} Os grafos abaixo foram gerados com o programa \textit{Graphviz} (\url{https://www.graphviz.org/}) e inseridos como figuras. Os códigos \texttt{.dot} correspondentes são apresentados ao lado de cada definição.
+
+%-------------------------------------------------------------
+\subsection{Grafo, Grafo Simples, Grafo Direcionado (Dígrafo), Multigrafo}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Grafo] Um grafo $G = (V, E)$ é uma estrutura composta por um conjunto de \textbf{vértices} (nós) $V$ e um conjunto de \textbf{arestas} $E$, onde cada aresta conecta um par de vértices. Formalmente, $E \subseteq \{\{u,v\} \mid u, v \in V\}$ para grafos não dirigidos.
+
+  \textit{Exemplo:} $V = \{1, 2, 3\}$, $E = \{\{1,2\}, \{2,3\}\}$.
+
+  \item[Grafo Simples] Um grafo simples é aquele que \textbf{não possui laços} (aresta de um vértice para si mesmo) e \textbf{não possui arestas múltiplas} (mais de uma aresta entre o mesmo par de vértices). É o tipo mais comum tratado na teoria dos grafos.
+
+  \item[Grafo Direcionado (Dígrafo)] Em um dígrafo $D = (V, A)$, cada aresta (chamada \textbf{arco}) possui uma direção, representada por um par ordenado $(u, v)$, significando que há uma ligação de $u$ para $v$ mas não necessariamente de $v$ para $u$.
+
+  \textit{Exemplo:} $V = \{A, B, C\}$, $A = \{(A,B), (B,C), (C,A)\}$.
+
+  \item[Multigrafo] Um multigrafo permite a existência de \textbf{múltiplas arestas} entre o mesmo par de vértices e/ou \textbf{laços}. É uma generalização do grafo simples.
+
+  \textit{Comparação na literatura:} Alguns autores (como Bondy \& Murty) reservam o termo ``grafo'' para o caso simples e usam ``multigrafo'' para o caso com arestas múltiplas. Outros (como Diestel) adotam ``grafo'' de forma genérica. \textbf{Conclusão:} A distinção terminológica varia, sendo importante verificar a definição adotada pelo autor.
+\end{description}
+
+\noindent\textit{Código Graphviz -- Grafo Simples:}
+\begin{verbatim}
+graph G {
+  1 -- 2;
+  2 -- 3;
+  3 -- 1;
+}
+\end{verbatim}
+
+\noindent\textit{Código Graphviz -- Dígrafo:}
+\begin{verbatim}
+digraph D {
+  A -> B;
+  B -> C;
+  C -> A;
+}
+\end{verbatim}
+
+%-------------------------------------------------------------
+\subsection{Grafo Ponderado, Grafo Rotulado, Rede}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Grafo Ponderado] Um grafo ponderado (ou valorado) é aquele em que cada aresta ou vértice possui um \textbf{peso} (valor numérico) associado. É utilizado em problemas de otimização como menor caminho e árvore geradora mínima.
+
+  \textit{Exemplo:} Mapa rodoviário com distâncias nas estradas.
+
+  \item[Grafo Rotulado] Em um grafo rotulado, os vértices e/ou arestas possuem \textbf{rótulos} (identificadores, que podem ser strings, números ou outros atributos). Todo grafo simples com vértices identificados é tecnicamente rotulado.
+
+  \item[Rede] Uma rede é um grafo ponderado e/ou dirigido utilizado para modelar fluxos, comunicações ou transportes. O termo é mais comum em contextos aplicados (redes de computadores, redes de transporte, redes de fluxo).
+
+  \textbf{Comparação:} Alguns autores tratam ``rede'' como sinônimo de grafo ponderado; outros reservam o termo para grafos com capacidade de fluxo (redes de fluxo). \textbf{Conclusão:} O contexto de aplicação define o uso mais adequado do termo.
+\end{description}
+
+\noindent\textit{Código Graphviz -- Grafo Ponderado:}
+\begin{verbatim}
+graph G {
+  A -- B [label="5"];
+  B -- C [label="3"];
+  A -- C [label="7"];
+}
+\end{verbatim}
+
+%-------------------------------------------------------------
+\subsection{Vértice Adjacente, Vizinhança, Grau de um Vértice}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Vértice Adjacente (Vizinho)] Dois vértices $u$ e $v$ são \textbf{adjacentes} se existe uma aresta $\{u,v\} \in E$. Diz-se que $v$ é vizinho de $u$.
+
+  \item[Vizinhança] A \textbf{vizinhança} de um vértice $v$, denotada $N(v)$, é o conjunto de todos os vértices adjacentes a $v$: $N(v) = \{u \in V \mid \{u,v\} \in E\}$.
+
+  \item[Grau (Valência) de um Vértice] O \textbf{grau} de um vértice $v$, denotado $d(v)$ ou $\deg(v)$, é o número de arestas incidentes a $v$. Para dígrafos, distingue-se o \textbf{grau de entrada} ($d^-(v)$) e o \textbf{grau de saída} ($d^+(v)$).
+
+  \textit{Teorema do aperto de mãos:} $\sum_{v \in V} d(v) = 2|E|$.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Vértice Sucessor e Antecessor, Fecho Transitivo}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Vértice Sucessor] Em um dígrafo, $v$ é \textbf{sucessor} de $u$ se existe o arco $(u, v)$.
+
+  \item[Vértice Antecessor] $u$ é \textbf{antecessor} de $v$ se existe o arco $(u, v)$.
+
+  \item[Fecho Transitivo] O \textbf{fecho transitivo} de um dígrafo é um novo dígrafo $G^+$ com os mesmos vértices, onde existe um arco $(u, v)$ em $G^+$ se e somente se existe um \textbf{caminho} de $u$ a $v$ em $G$ (com comprimento $\geq 1$).
+
+  \item[Fecho Transitivo Direto] Conjunto de todos os vértices \textbf{alcançáveis} a partir de um vértice $u$ (seguindo os arcos).
+
+  \item[Fecho Transitivo Indireto] Conjunto de todos os vértices a partir dos quais se pode \textbf{chegar} a $u$ (antecessores transitivos).
+
+  \textit{Aplicação:} O algoritmo de Warshall calcula o fecho transitivo em tempo $O(|V|^3)$.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Grafo Completo, Grafo Pleno, Grafo Bipartido, Grafo Bipartido Completo}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Grafo Completo] Um grafo completo $K_n$ é aquele em que \textbf{todo par de vértices distintos} está conectado por exatamente uma aresta. Possui $\binom{n}{2} = \frac{n(n-1)}{2}$ arestas.
+
+  \item[Grafo Pleno] O termo ``grafo pleno'' é utilizado por alguns autores brasileiros como sinônimo de grafo completo. \textbf{Conclusão:} Não há distinção conceitual; trata-se de variação terminológica regional.
+
+  \item[Grafo Bipartido] Um grafo $G = (V, E)$ é \textbf{bipartido} se $V$ pode ser dividido em dois conjuntos disjuntos $X$ e $Y$ ($V = X \cup Y$, $X \cap Y = \emptyset$) de forma que toda aresta conecte um vértice de $X$ a um vértice de $Y$. Equivalentemente, $G$ não possui ciclos de comprimento ímpar.
+
+  \item[Grafo Bipartido Completo] Denotado $K_{m,n}$, é o grafo bipartido em que \textbf{todo} vértice de $X$ (com $|X|=m$) está conectado a \textbf{todo} vértice de $Y$ (com $|Y|=n$). Possui $m \cdot n$ arestas.
+\end{description}
+
+\noindent\textit{Código Graphviz -- Bipartido Completo $K_{2,3}$:}
+\begin{verbatim}
+graph K23 {
+  rankdir=LR;
+  {rank=same; A; B}
+  {rank=same; X; Y; Z}
+  A -- X; A -- Y; A -- Z;
+  B -- X; B -- Y; B -- Z;
+}
+\end{verbatim}
+
+%-------------------------------------------------------------
+\subsection{Subgrafo e Grafo Parcial}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Subgrafo] $H$ é um \textbf{subgrafo} de $G$ se $V(H) \subseteq V(G)$ e $E(H) \subseteq E(G)$ (com as arestas tendo extremos em $V(H)$). Ou seja, um subgrafo é obtido removendo vértices e/ou arestas de $G$.
+
+  \item[Grafo Parcial] Um grafo parcial (ou grafo gerador) de $G$ é um subgrafo $H$ tal que $V(H) = V(G)$, ou seja, conserva \textbf{todos os vértices} mas pode ter menos arestas. É obtido apenas pela remoção de arestas.
+
+  \textbf{Comparação:} A distinção entre ``subgrafo'' e ``grafo parcial'' nem sempre é feita na literatura anglófona, onde ambos podem ser chamados de \textit{subgraph}. Na literatura francesa e brasileira, a distinção é mais comum. \textbf{Conclusão:} Atentar ao contexto e ao autor consultado.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Caminho, Passeio, Cadeia, Ciclo, Circuito, Percurso}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Passeio (Caminhada)] Uma sequência alternada de vértices e arestas $v_0, e_1, v_1, e_2, \ldots, e_k, v_k$ onde cada aresta $e_i$ incide em $v_{i-1}$ e $v_i$. Vértices e arestas podem se repetir.
+
+  \item[Cadeia (Trilha)] Um passeio em que \textbf{nenhuma aresta} se repete, mas vértices podem se repetir.
+
+  \item[Caminho] Uma cadeia em que \textbf{nenhum vértice} se repete (consequentemente, nenhuma aresta também).
+
+  \item[Ciclo] Um caminho fechado: $v_0 = v_k$ e todos os demais vértices são distintos. Comprimento mínimo: 3 (em grafos simples).
+
+  \item[Circuito] Uma cadeia fechada ($v_0 = v_k$) em que \textbf{nenhuma aresta} se repete, mas vértices internos podem se repetir.
+
+  \item[Percurso (Rota)] Termo genérico para uma sequência de vértices/arestas que representa uma trajetória no grafo, frequentemente usado em contextos aplicados.
+
+  \textbf{Comparação:} A nomenclatura varia muito na literatura. Alguns autores usam ``caminho'' para o que outros chamam de ``passeio''. \textbf{Conclusão:} A definição do autor deve ser verificada antes de usar os termos.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Ciclo/Circuito Euleriano e Hamiltoniano}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Ciclo/Circuito Euleriano] Um circuito que \textbf{passa por todas as arestas} do grafo exatamente uma vez e retorna ao vértice inicial. Existe em um grafo conexo se e somente se \textbf{todo vértice tem grau par}. O problema originou-se das Sete Pontes de Königsberg (Euler, 1736).
+
+  \item[Caminho Euleriano] Passa por todas as arestas exatamente uma vez, sem necessidade de retornar ao início. Existe se e somente se o grafo possui exatamente \textbf{dois vértices de grau ímpar}.
+
+  \item[Ciclo/Circuito Hamiltoniano] Um ciclo que \textbf{visita todos os vértices} exatamente uma vez. Verificar a existência de um ciclo hamiltoniano é um problema NP-completo (não há condição necessária e suficiente simples como no caso euleriano).
+
+  \item[Caminho Hamiltoniano] Visita todos os vértices exatamente uma vez sem retornar ao início.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Cintura, Circunferência, Raio, Diâmetro, Centro e Mediana}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Cintura (\textit{girth})] O comprimento do \textbf{menor ciclo} de um grafo. Se o grafo for acíclico, a cintura é indefinida (ou $\infty$).
+
+  \item[Circunferência] O comprimento do \textbf{maior ciclo} do grafo.
+
+  \item[Distância $d(u,v)$] O comprimento do \textbf{menor caminho} entre dois vértices $u$ e $v$.
+
+  \item[Excentricidade de um Vértice] $e(v) = \max_{u \in V} d(v, u)$: a maior distância de $v$ a qualquer outro vértice.
+
+  \item[Raio] $r(G) = \min_{v \in V} e(v)$: a menor excentricidade do grafo.
+
+  \item[Diâmetro] $diam(G) = \max_{v \in V} e(v)$: a maior excentricidade (maior distância entre qualquer par).
+
+  \item[Centro] Conjunto de vértices cuja excentricidade é igual ao raio: $C(G) = \{v \mid e(v) = r(G)\}$.
+
+  \item[Mediana] Vértice $v$ que minimiza $\sum_{u \in V} d(v, u)$ (soma das distâncias a todos os demais).
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Clique e Clique Maximal}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Clique] Um subconjunto $S \subseteq V$ tal que o subgrafo induzido por $S$ é um grafo completo (todo par de vértices em $S$ é adjacente).
+
+  \item[Clique Maximal] Uma clique que não pode ser estendida adicionando mais nenhum vértice (não existe vértice fora da clique adjacente a todos os vértices dela).
+
+  \item[Clique Máximo] A clique de maior cardinalidade no grafo. Encontrar o clique máximo é NP-completo.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Grafo Cíclico e Acíclico}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Grafo Cíclico] Contém pelo menos um ciclo. O grafo cíclico $C_n$ refere-se especificamente ao ciclo simples com $n$ vértices.
+
+  \item[Grafo Acíclico] Não possui nenhum ciclo. Um grafo não dirigido acíclico e conexo é uma \textbf{árvore}. Um dígrafo acíclico é chamado de \textbf{DAG} (\textit{Directed Acyclic Graph}).
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Grafos Isomorfos e Grafo Planar}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Grafos Isomorfos] Dois grafos $G$ e $H$ são isomorfos ($G \cong H$) se existe uma bijeção $f: V(G) \to V(H)$ que preserva adjacência: $\{u,v\} \in E(G) \Leftrightarrow \{f(u), f(v)\} \in E(H)$. Grafos isomorfos têm a mesma estrutura, diferindo apenas na representação ou rotulação.
+
+  \item[Grafo Planar] Um grafo é \textbf{planar} se pode ser desenhado no plano sem que nenhuma aresta se cruze. O Teorema de Kuratowski afirma que um grafo é planar se e somente se não contém subdivisão de $K_5$ ou $K_{3,3}$. A Fórmula de Euler para grafos planares conexos: $|V| - |E| + |F| = 2$, onde $F$ é o número de faces.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Grafo Induzido, Grafo Dual, Grafo Perfeito}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Grafo Induzido] O subgrafo \textbf{induzido} por um subconjunto $S \subseteq V$, denotado $G[S]$, é o grafo cujo conjunto de vértices é $S$ e cujo conjunto de arestas contém todas as arestas de $G$ com ambos os extremos em $S$.
+
+  \item[Grafo Dual] Dado um grafo planar $G$, seu \textbf{dual} $G^*$ é construído colocando um vértice em cada face de $G$ e ligando dois vértices de $G^*$ se as faces correspondentes compartilham uma aresta em $G$. O dual do dual de um grafo planar conexo é isomorfo ao grafo original.
+
+  \item[Grafo Perfeito] Um grafo é \textbf{perfeito} se, para todo subgrafo induzido, o número cromático é igual ao tamanho do clique máximo. O Teorema Forte dos Grafos Perfeitos (Chudnovsky et al., 2006) caracteriza os grafos perfeitos como aqueles sem ciclo ímpar induzido de comprimento $\geq 5$ nem seu complemento.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Grafo Conexo, Componente Conexa e Fortemente Conexa}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Grafo Conexo] Um grafo não dirigido é \textbf{conexo} se existe um caminho entre qualquer par de vértices.
+
+  \item[Componente Conexa] Uma \textbf{componente conexa} é um subgrafo conexo maximal de $G$ (não pode ser estendido mantendo a conexidade).
+
+  \item[Grafo Fortemente Conexo] Um dígrafo é \textbf{fortemente conexo} se, para todo par de vértices $(u,v)$, existe um caminho dirigido de $u$ a $v$ \textbf{e} de $v$ a $u$.
+
+  \item[Componente Fortemente Conexa] Uma componente fortemente conexa é um subdígrafo fortemente conexo maximal. O algoritmo de Tarjan (ou Kosaraju) encontra todas as componentes fortemente conexas em tempo $O(|V|+|E|)$.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Matriz de Adjacência, Matriz de Incidência, Lista de Adjacência}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Matriz de Adjacência] Uma matriz $A$ de ordem $n \times n$ (onde $n = |V|$) tal que $A[i][j] = 1$ se existe aresta entre $v_i$ e $v_j$, e $0$ caso contrário. Para grafos ponderados, $A[i][j]$ recebe o peso da aresta. Complexidade de espaço: $O(n^2)$.
+
+  \item[Matriz de Incidência] Uma matriz $M$ de ordem $n \times m$ (onde $m = |E|$) tal que $M[i][j] = 1$ se o vértice $v_i$ é extremo da aresta $e_j$. Em dígrafos, $M[i][j] = 1$ se $v_i$ é origem e $M[i][j] = -1$ se é destino. Complexidade: $O(n \cdot m)$.
+
+  \item[Lista de Adjacência] Para cada vértice $v_i$, mantém-se uma lista dos vértices adjacentes. Complexidade de espaço: $O(n + m)$. É preferível para grafos \textbf{esparsos}; a matriz de adjacência é preferível para grafos \textbf{densos}.
+
+  \textit{Exemplo de lista para $V=\{1,2,3\}$, $E=\{\{1,2\},\{2,3\}\}$:}
+  \begin{itemize}
+    \item $1$: [2]
+    \item $2$: [1, 3]
+    \item $3$: [2]
+  \end{itemize}
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Árvore e Conceitos Relacionados}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Árvore] Um grafo \textbf{conexo e acíclico}. Equivalentemente, um grafo com $n$ vértices e $n-1$ arestas onde existe exatamente um caminho entre qualquer par de vértices.
+
+  \item[Sub-Árvore] Um subgrafo conexo de uma árvore que também é uma árvore.
+
+  \item[Raiz] Em uma árvore enraizada, a \textbf{raiz} é o vértice designado como ponto de partida da hierarquia.
+
+  \item[Folha] Um vértice de grau 1 (sem filhos em árvores enraizadas).
+
+  \item[Tamanho de uma Árvore] Geralmente definido como o número de vértices $n$ ou o número de arestas $n-1$.
+
+  \item[Profundidade (Altura)] A \textbf{profundidade} de um vértice é o comprimento do caminho da raiz até ele. A \textbf{altura} da árvore é a máxima profundidade entre todos os vértices (ou a maior distância entre raiz e uma folha).
+
+  \item[Árvore Balanceada] Uma árvore em que a diferença de altura entre as sub-árvores esquerda e direita de qualquer nó é limitada (ex.: fator de balanceamento $\leq 1$ nas árvores AVL).
+
+  \item[Heap] Uma árvore binária completa que satisfaz a \textbf{propriedade de heap}: em um max-heap, o valor de cada nó é maior ou igual ao de seus filhos; em um min-heap, menor ou igual. Estrutura fundamental para filas de prioridade e o algoritmo Heapsort.
+\end{description}
+
+%-------------------------------------------------------------
+\subsection{Árvore Geradora, Árvore Geradora Mínima e com Restrição de Diâmetro}
+%-------------------------------------------------------------
+
+\begin{description}[leftmargin=0pt]
+  \item[Árvore Geradora] Uma \textbf{árvore geradora} (ou árvore de abrangência) de um grafo conexo $G$ é um subgrafo que contém \textbf{todos os vértices} de $G$ e é uma árvore. Qualquer grafo conexo com $n$ vértices possui árvore(s) geradora(s) com exatamente $n-1$ arestas.
+
+  \item[Árvore Geradora Mínima (AGM)] Em um grafo ponderado, a \textbf{árvore geradora mínima} é aquela cuja soma dos pesos das arestas é \textbf{mínima}. Algoritmos clássicos: Kruskal ($O(m \log m)$) e Prim ($O(m \log n)$ com heap). A AGM é única se todos os pesos das arestas forem distintos.
+
+  \item[Árvore Geradora Mínima com Restrição de Diâmetro (DCMST)] É uma variante do problema da AGM onde, além de minimizar o custo total, impõe-se que o diâmetro da árvore geradora resultante não exceda um valor $D$ dado. Formalmente: encontrar uma árvore geradora $T$ de $G$ tal que $\sum_{e \in T} w(e)$ seja mínima e $diam(T) \leq D$.
+
+  Este problema é NP-difícil em geral. Abordagens incluem heurísticas, algoritmos de programação dinâmica e meta-heurísticas. Tem aplicações em redes de comunicação com requisitos de latência máxima.
+\end{description}
+
+\newpage
+\section*{Referências}
+\addcontentsline{toc}{section}{Referências}
+
+\begin{itemize}
+  \item DIESTEL, R. \textbf{Graph Theory}. 5. ed. Springer, 2017.
+  \item BONDY, J. A.; MURTY, U. S. R. \textbf{Graph Theory}. Springer, 2008.
+  \item CORMEN, T. H. et al. \textbf{Introduction to Algorithms}. 4. ed. MIT Press, 2022.
+  \item SZWARCFITER, J. L. \textbf{Grafos e Algoritmos Computacionais}. 2. ed. Campus, 1988.
+  \item GRAPHVIZ. \textit{Graph Visualization Software}. Disponível em: \url{https://www.graphviz.org/}. Acesso em: mar. 2026.
+\end{itemize}
+
+\end{document}

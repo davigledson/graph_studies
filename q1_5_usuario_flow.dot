@@ -1,6 +1,4 @@
-digraph user_flow {
-
-    
+digraph user_flow {    
     rankdir=LR;
 
     Usuario -> Login;

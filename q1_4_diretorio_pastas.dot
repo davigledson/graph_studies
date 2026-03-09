@@ -1,11 +1,11 @@
 graph diretorio {
 
 
-    Raiz -- Download;
+    Raiz -- Downloads;
 
-    Download -- Documentos;
-    Download -- Filmes;
-    Download -- Jogos;
+    Downloads -- Documentos;
+    Downloads -- Filmes;
+    Downloads -- Jogos;
 
     Documentos -- Pessoais;
     Documentos -- Gerais;

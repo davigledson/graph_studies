@@ -5,7 +5,5 @@ digraph G {
  Natal -> Tibal [label="44.1 km"];
  Recife -> Apodi [label="78.6 km"];
 
- 
-
     
 }

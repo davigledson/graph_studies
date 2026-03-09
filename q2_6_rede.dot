@@ -1,18 +1,15 @@
 digraph G {
-       
- Servidor -> Roteador [label="10 metros"];
- Servidor -> Computador1[label="20 metros"];
- Servidor -> Computador2[label="25 metros"];
-  Servidor -> Computador3[label="30 metros"];
-   Servidor -> Computador4[label="35 metros"];
-
-
- Roteador -> Computador5 [label="5 metros"];
- Roteador -> Computador6 [label="5 metros"];
-
- 
-
- 
-
     
+Servidor -> Roteador [label="10 metros"];
+Servidor -> Computador1[label="20 metros"];
+Servidor -> Computador2[label="25 metros"];
+Servidor -> Computador3[label="30 metros"];
+Servidor -> Computador4[label="35 metros"];
+
+
+Roteador -> Computador5 [label="5 metros"];
+Roteador -> Computador6 [label="5 metros"];
+
+
+
 }

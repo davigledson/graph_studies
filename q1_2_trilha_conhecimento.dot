@@ -6,5 +6,4 @@ graph trila_de_conhecimento {
     Framework -- BootStrap;
     Framework -- Tailwind;
      
-
 }
