@@ -1,6 +1,6 @@
 graph G {
 
-    rankdir=LR
+layout="circo";
 
     // Grafo
     subgraph cluster_grafo {

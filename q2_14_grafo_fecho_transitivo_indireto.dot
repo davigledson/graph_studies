@@ -1,8 +1,4 @@
 digraph G {
-
-
-
-
 A -> B 
 B -> C 
 C -> D 
@@ -11,4 +7,5 @@ C -> D
 A [style=filled,fillcolor=aquamarine]
 B  [style=filled,fillcolor=aquamarine]
 C [style=filled,fillcolor=aquamarine]
+
 }

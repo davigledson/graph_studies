@@ -1,5 +1,7 @@
 graph G {
+    
     A -- B;
     A -- C;
-    C --B
+    C -- B;
+
 }

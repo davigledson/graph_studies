@@ -1,7 +1,5 @@
 digraph GrafoDirecionado {
 
-    
-
     C [label="C\n Grau 4"];
     A [label="A\nGrau 1"];
     B [label="B\n Grau 0"];

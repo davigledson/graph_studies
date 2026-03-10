@@ -1,4 +1,6 @@
-digraph G {
+digraph G 
+{
+    layout="circo";
     A -> B
     B -> C
     C -> A

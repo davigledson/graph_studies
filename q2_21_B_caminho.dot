@@ -1,7 +1,5 @@
 graph Caminho {
 
-    edge [penwidth=2];
-
     // Caminho destacado
     A -- B [color=red];
     B -- C [color=red];

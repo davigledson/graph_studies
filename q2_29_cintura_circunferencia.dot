@@ -1,7 +1,5 @@
 graph ExemploCinturaCircunferencia {
 
-    
-
     // Ciclo menor (3) → cintura
     A -- B [color=red];
     B -- C [color=red];

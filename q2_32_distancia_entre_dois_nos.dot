@@ -2,10 +2,20 @@ graph G {
   
     A -- C;
     C -- D;
-    D -- E;
-    A -- D;
+   
+    D -- G;
+    G -- C;
+    K -- E;
+    K -- D;
+    I -- C;
+   
+    B -- E ;
+    B -- G;
 
-    // Destacando o caminho mais curto de A para E
-    A -- B [color=red, penwidth=2];
-    B -- E [color=red, penwidth=2];
+    // Destacando a distancia de A para H
+    E -- H [color=red, penwidth=2];
+    D -- E [color=red, penwidth=2];
+    A -- D [color=red, penwidth=2];
+    
+   
 }

@@ -1,10 +1,11 @@
 graph CicloEuleriano {
 
-    
+// Ciclo Euleriano (percorre todas as arestas)
+A -- B [color=red];
+B -- C [color=red];
+C -- D [color=red];
+D -- E [color=red];
+E -- F [color=red];
+F -- A [color=red];
 
-    // Ciclo Euleriano (percorre todas as arestas)
-    A -- B [color=red];
-    B -- C [color=red];
-    C -- D [color=red];
-    D -- A [color=red];
 }

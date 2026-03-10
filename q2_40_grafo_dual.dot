@@ -1,26 +1,28 @@
 graph GrafoComDual {
-    A [style=filled, fillcolor=lightblue];
-    B [style=filled, fillcolor=lightblue];
-    C [style=filled, fillcolor=lightblue];
-    D [style=filled, fillcolor=lightblue];
 
-    A -- B;
-    B -- C;
-    C -- D;
-    D -- A;
-    A -- C; 
+    layout=neato
+    node [style=filled]
 
-   
-    C1 [style=filled, fillcolor=lightcoral, label="A1"];
-    B2 [style=filled, fillcolor=lightcoral, label="B2"];
-    C3 [style=filled, fillcolor=lightcoral, label="C3"];
+    // Grafo original
+    A [fillcolor=lightblue, pos="0,2!"]
+    B [fillcolor=lightblue, pos="2,2!"]
+    C [fillcolor=lightblue, pos="2,0!"]
+    D [fillcolor=lightblue, pos="0,0!"]
 
-   
-    C1 -- B2 [color=red, penwidth=2]; 
-    C1 -- C3 [color=red, penwidth=2];
-    B2 -- C3 [color=red, penwidth=2]; 
+    A -- B
+    B -- C
+    C -- D
+    D -- A
+    A -- C
 
-    // Posicionamento aproximado para visualização
-    { rank=same; A; C; }
-    { rank=same; B; D; }
+    // Vértices do grafo dual (faces)
+    F1 [fillcolor=lightcoral, pos="1.5,1.3!"];
+    F2 [fillcolor=lightcoral, pos="0.6,0.7!"];
+    F3 [fillcolor=lightcoral, pos="3,1!"];
+
+    // Arestas do dual
+    F1 -- F2 [color=red, style=dashed]; 
+    F1 -- F3 [color=red, style=dashed];
+    F2 -- F3 [color=red, style=dashed];
+
 }

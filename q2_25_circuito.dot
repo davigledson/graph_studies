@@ -1,12 +1,10 @@
 graph Circuito {
 
-    
-
     // Circuito destacado
-    A -- B;
-    B -- C;
-    C -- D;
-    D -- A;
+    A -- B [color=red];
+    B -- C [color=red];
+    C -- D [color=red];
+    D -- A [color=red];
 
     // Aresta extra que sobrou do circuito
     B -- D [color=gray];

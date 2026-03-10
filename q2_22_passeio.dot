@@ -1,7 +1,4 @@
 digraph PasseioDirecionado {
-
-    edge [penwidth=2];
-
     // Passeio destacado
     A -> B ;
     B -> C ;

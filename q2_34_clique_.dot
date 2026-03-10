@@ -1,0 +1,11 @@
+graph GrafoClique {
+
+    A -- B [color=red]
+    A -- C [color=red]
+    B -- C [color=red]
+    B -- D
+    C -- D
+    D -- E
+
+   
+}

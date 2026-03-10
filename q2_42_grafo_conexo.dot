@@ -1,4 +1,5 @@
 graph GrafoConexo {
+    layout="circo"
     A -- B;
     B -- C;
     C -- D;

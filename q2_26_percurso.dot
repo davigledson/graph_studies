@@ -1,12 +1,11 @@
 graph Percurso {
 
-    edge [penwidth=2];
+A -- B [color=red];
+B -- C [color=red];
+B -- D ;
 
-    // Percurso destacado
-    A -- B;
-    B -- C;
-    C -- D;
+C -- E [color=red];
+D -- E;
+E -- F [color=red];
 
-  
-   
 }

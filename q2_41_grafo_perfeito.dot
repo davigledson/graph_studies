@@ -1,6 +1,11 @@
 graph G {
-    A -- B
-    A -- C
-    B -- C
-    C -- D
+    layout="circo"
+
+    A -- B;
+    A -- C;
+    B -- C;
+    C -- D;
+    D -- B;
+    D -- A;
+    
 }
