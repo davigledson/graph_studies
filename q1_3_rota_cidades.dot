@@ -1,5 +1,5 @@
 graph rotas {
-  
+layout="circo";
 Mossoro -- Barauna [label="36 km"];
 Mossoro -- Upanema [label="55.1 km"];
 Mossoro -- Tibal [label="44.1 km"];

@@ -1,11 +1,34 @@
-digraph user_flow {    
-    rankdir=LR;
+digraph user_flow {
 
-    Usuario -> Login;
+    rankdir=LR;
+    node [shape=box];
+
+    Usuario -> PaginaInicial;
+
+    PaginaInicial -> Login;
+    PaginaInicial -> Cadastro;
+    PaginaInicial -> Produtos;
+
+    Cadastro -> Login;
+
     Login -> Dashboard;
+
     Dashboard -> Perfil;
     Dashboard -> Configuracoes;
+    Dashboard -> Produtos;
+    Dashboard -> Carrinho;
+    Dashboard -> Pedidos;
+
+    Produtos -> DetalheProduto;
+    DetalheProduto -> Carrinho;
+
+    Carrinho -> Checkout;
+    Checkout -> Pagamento;
+    Pagamento -> Confirmacao;
+
     Perfil -> Logout;
     Configuracoes -> Logout;
+    Pedidos -> Logout;
+    Confirmacao -> Logout;
 
 }
