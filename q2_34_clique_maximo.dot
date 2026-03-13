@@ -1,4 +1,4 @@
-graph GrafoClique {
+graph GrafoCliqueMaximo {
 
     A -- B 
     A -- C 

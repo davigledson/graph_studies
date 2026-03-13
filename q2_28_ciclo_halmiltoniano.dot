@@ -1,7 +1,4 @@
 graph CicloHamiltoniano {
-
-   
-
     // Ciclo Hamiltoniano destacado
     A -- B [color=red];
     B -- C [color=red];
