@@ -1,6 +1,6 @@
 graph Grafo {
     C [label="C\n Grau 4"];
-    A [label="A\nGrau 3"];
+    A [label="A\n Grau 2"];
     B [label="B\n Grau 2"];
     D [label="D\n Grau 2"];
     E [label="E\n Grau 2"];

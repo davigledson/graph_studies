@@ -1,11 +1,13 @@
 graph Heaps {
-
     rankdir=TB
+    ranksep=1.5
+    nodesep=0.5
 
-    // Heap Máximo
     subgraph cluster_heap_max {
         label="Heap Maximo"
+        
 
+        // Max-heap: pai sempre maior que filhos
         A -- B
         A -- C
         B -- D
@@ -22,10 +24,11 @@ graph Heaps {
         G [label="10"]
     }
 
-    // Heap Mínimo
     subgraph cluster_heap_min {
         label="Heap Minimo"
+        
 
+        // Min-heap: pai sempre menor que filhos
         H -- I
         H -- J
         I -- K
@@ -41,5 +44,4 @@ graph Heaps {
         M [label="60"]
         N [label="70"]
     }
-
 }

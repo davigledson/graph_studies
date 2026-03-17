@@ -1,10 +1,10 @@
 digraph GrafoDirecionado {
 
-    C [label="C\n Grau 4"];
-    A [label="A\nGrau 1"];
-    B [label="B\n Grau 0"];
-    D [label="D\n Grau 1"];
-    E [label="E\n Grau 1"];
+    C [label="C\nGrau saída 4"];
+    A [label="A\nGrau saída 1"];
+    B [label="B\nGrau saída 0"];
+    D [label="D\nGrau saída 1"];
+    E [label="E\nGrau saída 0"];
 
     C -> A [color=red];
     C -> B [color=red];

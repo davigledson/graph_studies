@@ -1,13 +1,26 @@
-graph G {
 
-A -- B
-A -- C
-A -- D
-A -- E
-B -- C
-B -- D
-B -- E
-C -- D
-C -- E
-D -- E
+
+graph G {
+    layout=neato
+    
+
+    A [pos="0,2!"]
+    B [pos="0,0!"]
+    C [pos="2,2!"]
+    D [pos="2,0!"]
+
+    // Laços em cima
+    A -- A [headport=n, tailport=n]
+    C -- C [headport=n, tailport=n]
+
+    // Laços embaixo
+    B -- B [headport=s, tailport=s]
+    D -- D [headport=s, tailport=s]
+
+    A -- B
+    C -- B
+    A -- D
+    A -- C
+    C -- D
+    D -- B
 }

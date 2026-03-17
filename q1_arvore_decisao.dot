@@ -1,0 +1,30 @@
+digraph ArvoreDecisaoIA {
+
+    node [shape=box];
+
+    Inicio [label="Usuário envia mensagem"];
+    Pergunta [label="É uma pergunta?"];
+    Comando [label="É um comando?"];
+    Conversa [label="É conversa casual?"];
+    Desconhecido [label="Não entendi"];
+
+    RespostaInfo [shape=ellipse, label="Responder informação"];
+    ExecutarComando [shape=ellipse, label="Executar ação"];
+    ResponderSocial [shape=ellipse, label="Responder socialmente"];
+    PedirClarificacao [shape=ellipse, label="Pedir esclarecimento"];
+
+    Inicio -> Pergunta;
+    Inicio -> Comando;
+    
+    Pergunta -> RespostaInfo [label="Sim"];
+    Pergunta -> Conversa [label="Não"];
+
+    Comando -> ExecutarComando [label="Sim"];
+    Comando -> Conversa [label="Não"];
+
+    Conversa -> ResponderSocial [label="Sim"];
+    Conversa -> Desconhecido [label="Não"];
+
+    Desconhecido -> PedirClarificacao [label="Sim"];
+
+}
