@@ -1,43 +1,43 @@
 {
     "Recife": {
-        "Olinda": 5,
+        "Olinda": 5.0,
         "Paulista": 15.0,
         "Goiana": 61.0,
-        "Joao Pessoa": 116
+        "Joao Pessoa": 116.0
     },
     "Olinda": {
-        "Recife": 6,
-        "Paulista": 11,
+        "Recife": 6.0,
+        "Paulista": 11.0,
         "Goiana": 55.0
     },
     "Paulista": {
         "Recife": 16.0,
-        "Olinda": 11,
+        "Olinda": 11.0,
         "Goiana": 49.0
     },
     "Goiana": {
         "Recife": 60.0,
         "Olinda": 56.0,
         "Paulista": 49.0,
-        "Pitimbu": 32,
+        "Pitimbu": 32.0,
         "Joao Pessoa": 60.0
     },
     "Pitimbu": {
-        "Goiana": 32,
-        "Conde": 30.2 
+        "Goiana": 32.0,
+        "Conde": 30.2
     },
     "Conde": {
         "Pitimbu": 30.2,
         "Joao Pessoa": 24.5
     },
     "Joao Pessoa": {
-        "Recife": 116.4,
-        "Goiana": 60.0,
-        "Conde": 24.5,
+        "Recife": 116.0,
+        "Goiana": 56.0,
+        "Conde": 21.3,
         "Cabedelo": 18.1,
-        "Baia Formosa": 85.0,
+        "Baia Formosa": 116.0,
         "Pipa": 90.0,
-        "Natal": 179.8
+        "Natal": 179.0
     },
     "Cabedelo": {
         "Joao Pessoa": 18.1,
@@ -59,11 +59,10 @@
     },
     "Natal": {
         "Joao Pessoa": 179.8,
-        "Nisia Floresta": 29.6,
+        "Nisia Floresta": 41.0,
         "Extremoz": 19.8,
-        "Touros": 90.0,
-        "Mossoro": 281.4,
-        "Fortaleza": 515.2
+        "Touros": 85.3,
+        "Mossoro": 277.0
     },
     "Extremoz": {
         "Natal": 19.8,
@@ -103,8 +102,7 @@
     "Aracati": {
         "Mossoro": 140.0,
         "Icapui": 49.6,
-        "Beberibe": 64.8,
-        "Fortaleza": 150.0
+        "Beberibe": 64.8
     },
     "Beberibe": {
         "Mossoro": 220.0,
@@ -114,11 +112,9 @@
     "Aquiraz": {
         "Mossoro": 240.0,
         "Beberibe": 54.2,
-        "Fortaleza": 30.5
+        "Porto das Dunas": 11.0
     },
-    "Fortaleza": {
-        "Natal": 515.2,
-        "Aracati": 150.0,
-        "Aquiraz": 30.5
+    "Porto das Dunas": {
+        "Aquiraz": 11.0
     }
 }
