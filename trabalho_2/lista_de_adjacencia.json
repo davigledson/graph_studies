@@ -1,0 +1,124 @@
+{
+    "Recife": {
+        "Olinda": 5,
+        "Paulista": 15.0,
+        "Goiana": 61.0,
+        "Joao Pessoa": 116
+    },
+    "Olinda": {
+        "Recife": 6,
+        "Paulista": 11,
+        "Goiana": 55.0
+    },
+    "Paulista": {
+        "Recife": 16.0,
+        "Olinda": 11,
+        "Goiana": 49.0
+    },
+    "Goiana": {
+        "Recife": 60.0,
+        "Olinda": 56.0,
+        "Paulista": 49.0,
+        "Pitimbu": 32,
+        "Joao Pessoa": 60.0
+    },
+    "Pitimbu": {
+        "Goiana": 32,
+        "Conde": 30.2 
+    },
+    "Conde": {
+        "Pitimbu": 30.2,
+        "Joao Pessoa": 24.5
+    },
+    "Joao Pessoa": {
+        "Recife": 116.4,
+        "Goiana": 60.0,
+        "Conde": 24.5,
+        "Cabedelo": 18.1,
+        "Baia Formosa": 85.0,
+        "Pipa": 90.0,
+        "Natal": 179.8
+    },
+    "Cabedelo": {
+        "Joao Pessoa": 18.1,
+        "Baia Formosa": 70.0
+    },
+    "Baia Formosa": {
+        "Joao Pessoa": 85.0,
+        "Cabedelo": 70.0,
+        "Pipa": 35.4
+    },
+    "Pipa": {
+        "Joao Pessoa": 90.0,
+        "Baia Formosa": 35.4,
+        "Nisia Floresta": 44.8
+    },
+    "Nisia Floresta": {
+        "Pipa": 44.8,
+        "Natal": 29.6
+    },
+    "Natal": {
+        "Joao Pessoa": 179.8,
+        "Nisia Floresta": 29.6,
+        "Extremoz": 19.8,
+        "Touros": 90.0,
+        "Mossoro": 281.4,
+        "Fortaleza": 515.2
+    },
+    "Extremoz": {
+        "Natal": 19.8,
+        "Touros": 80.0,
+        "Mossoro": 250.0
+    },
+    "Touros": {
+        "Natal": 90.0,
+        "Extremoz": 80.0,
+        "Sao Miguel Gostoso": 24.7,
+        "Mossoro": 180.0
+    },
+    "Sao Miguel Gostoso": {
+        "Touros": 24.7,
+        "Tibau": 140.0
+    },
+    "Mossoro": {
+        "Natal": 281.4,
+        "Extremoz": 250.0,
+        "Touros": 180.0,
+        "Tibau": 60.0,
+        "Icapui": 100.0,
+        "Aracati": 140.0,
+        "Beberibe": 220.0,
+        "Aquiraz": 240.0
+    },
+    "Tibau": {
+        "Sao Miguel Gostoso": 140.0,
+        "Mossoro": 60.0,
+        "Icapui": 31.2
+    },
+    "Icapui": {
+        "Mossoro": 100.0,
+        "Tibau": 31.2,
+        "Aracati": 49.6
+    },
+    "Aracati": {
+        "Mossoro": 140.0,
+        "Icapui": 49.6,
+        "Beberibe": 64.8,
+        "Fortaleza": 150.0
+    },
+    "Beberibe": {
+        "Mossoro": 220.0,
+        "Aracati": 64.8,
+        "Aquiraz": 54.2
+    },
+    "Aquiraz": {
+        "Mossoro": 240.0,
+        "Beberibe": 54.2,
+        "Fortaleza": 30.5
+    },
+    "Fortaleza": {
+        "Natal": 515.2,
+        "Aracati": 150.0,
+        "Aquiraz": 30.5
+    }
+}
