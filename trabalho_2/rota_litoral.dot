@@ -1,0 +1,99 @@
+graph rota_litoral {
+    graph [
+        rankdir=LR
+        bgcolor="#F5F7F8"
+        label="Rota Litoranea  até 2 Porto das Dunas\n741 km  •  9h 16min "
+        fontsize=100
+        labelloc=t
+        fontcolor="#173F48"
+        fontname="Helvetica"
+        pad=0.8
+        nodesep=0.4
+        ranksep=0.6
+        splines=true
+        size="13,7"
+        ratio=fill
+    ]
+    node [
+        shape=box
+        style="filled,rounded"
+        fontname="Helvetica"
+        fontsize=13
+        fontcolor="#173F48"
+        fillcolor="#DDE8EA"
+        color="#8AB4BC"
+        penwidth=1.2
+        width=1.1
+        height=0.42
+        margin=0.12
+    ]
+    edge [
+        fontname="Helvetica"
+        fontsize=9
+        fontcolor="#8AB4BC"
+        color="#B0CDD2"
+        penwidth=1.0
+        arrowsize=0
+    ]
+
+    "Recife" [fillcolor="#B8D4D8" color="#4A8A96" penwidth=2.5 fontsize=60 fontcolor="#173F48"]
+    "Olinda" [fillcolor="#173F48" color="#173F48" fontsize=60  fontcolor="#FFFFFF"]
+    "Paulista" [fillcolor="#173F48" color="#173F48" fontsize=60 fontcolor="#FFFFFF"]
+    "Goiana" [fillcolor="#173F48" color="#173F48" fontsize=60 fontcolor="#FFFFFF"]
+    "Pitimbu" [fillcolor="#173F48" color="#173F48" fontsize=60 fontcolor="#FFFFFF"]
+    "Conde" [fillcolor="#173F48" color="#173F48" fontsize=60 fontcolor="#FFFFFF"]
+    "Joao Pessoa" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Cabedelo" [fillcolor="#173F48" color="#173F48" fontsize=60 fontcolor="#FFFFFF"]
+    "Baia Formosa" [fillcolor="#173F48" color="#173F48" fontsize=60 fontcolor="#FFFFFF"]
+    "Pipa" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60  penwidth=1.8 fontcolor="#173F48"]
+    "Nisia Floresta" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Natal" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Extremoz" [fillcolor="#173F48" color="#173F48"fontsize=60 fontcolor="#FFFFFF"]
+    "Touros" [fillcolor="#B8D4D8" color="#4A8A96"fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Sao Miguel Gostoso" [fillcolor="#B8D4D8" fontsize=60 color="#4A8A96" penwidth=1.8 fontcolor="#173F48"]
+    "Mossoro" [fillcolor="#173F48" color="#173F48" fontsize=60 fontcolor="#FFFFFF"]
+    "Tibau" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Icapui" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Aracati" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Beberibe" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Aquiraz" [fillcolor="#B8D4D8" color="#4A8A96" fontsize=60 penwidth=1.8 fontcolor="#173F48"]
+    "Porto das Dunas" [fillcolor="#C0392B" color="#922B21" fontsize=60 penwidth=2.5 fontsize=60 fontcolor="#FFFFFF" shape=box]
+
+    "Recife" -- "Olinda" [label="5km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Recife" -- "Paulista" [label="15km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Recife" -- "Goiana" [label="61km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Recife" -- "Joao Pessoa" [label="116km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Olinda" -- "Paulista" [label="11km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Olinda" -- "Goiana" [label="55km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Paulista" -- "Goiana" [label="49km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Goiana" -- "Pitimbu" [label="32km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Goiana" -- "Joao Pessoa" [label="60km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Pitimbu" -- "Conde" [label="30km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Conde" -- "Joao Pessoa" [label="24km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Joao Pessoa" -- "Cabedelo" [label="18km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Joao Pessoa" -- "Baia Formosa" [label="116km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Joao Pessoa" -- "Pipa" [label="90km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Joao Pessoa" -- "Natal" [label="179km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Cabedelo" -- "Baia Formosa" [label="70km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Baia Formosa" -- "Pipa" [label="35km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Pipa" -- "Nisia Floresta" [label="45km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Nisia Floresta" -- "Natal" [label="30km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Natal" -- "Extremoz" [label="20km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Natal" -- "Touros" [label="85km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Natal" -- "Mossoro" [label="277km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Extremoz" -- "Touros" [label="80km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Extremoz" -- "Mossoro" [label="250km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Touros" -- "Sao Miguel Gostoso" [label="25km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Touros" -- "Mossoro" [label="180km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Sao Miguel Gostoso" -- "Tibau" [label="140km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Mossoro" -- "Tibau" [label="60km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Mossoro" -- "Icapui" [label="100km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Mossoro" -- "Aracati" [label="140km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Mossoro" -- "Beberibe" [label="220km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Mossoro" -- "Aquiraz" [label="240km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
+    "Tibau" -- "Icapui" [label="31km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Icapui" -- "Aracati" [label="50km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Aracati" -- "Beberibe" [label="65km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Beberibe" -- "Aquiraz" [label="54km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Aquiraz" -- "Porto das Dunas" [label="11km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+}
