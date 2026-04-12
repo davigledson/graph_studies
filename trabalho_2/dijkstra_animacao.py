@@ -7,12 +7,6 @@ import matplotlib.patches as mpatches
 import matplotlib.animation as animation
 import networkx as nx
 
-# =============================================================
-# LEITURA DO GRAFO A PARTIR DE ARQUIVO JSON
-# Uso: python dijkstra_animacao.py grafo.json Recife "Porto das Dunas"
-# Ou sem argumentos: usa os valores padrão abaixo
-# =============================================================
-
 JSON_PADRAO  = "matriz_de_adjacencia.json"
 START_PADRAO = "Recife"
 END_PADRAO   = "Porto das Dunas"
@@ -39,9 +33,6 @@ if END not in grafo:
     print(f"Erro: cidade de destino '{END}' nao encontrada no grafo.")
     sys.exit(1)
 
-AVG_SPEED_KMH = 80
-
-# Layout automático via NetworkX
 G_temp = nx.Graph()
 for u, vizinhos in grafo.items():
     for v, w in vizinhos.items():
@@ -128,10 +119,6 @@ def dijkstra_frames(grafo, start, end):
 
     short_edges = [tuple(sorted([path[i], path[i+1]])) for i in range(len(path)-1)]
     total_dist = dist[end]
-    total_min = round((total_dist / AVG_SPEED_KMH) * 60)
-    horas = total_min // 60
-    minutos = total_min % 60
-    tempo_str = f"{horas}h {minutos}min" if horas > 0 else f"{minutos}min"
 
     frames.append({
         "visited": set(visited),
@@ -140,20 +127,16 @@ def dijkstra_frames(grafo, start, end):
         "active_edges": set(),
         "short_path": short_edges,
         "dist": dict(dist),
-        "msg": (
-            f"Caminho minimo: {' -> '.join(path)}\n"
-            f"Distancia total: {total_dist:.1f} km  |  Tempo estimado: {tempo_str} (a {AVG_SPEED_KMH} km/h)"
-        ),
+        "msg": f"Caminho minimo: {' -> '.join(path)}  |  Distancia total: {total_dist:.1f} km",
         "done": True,
         "path": path,
         "total_dist": total_dist,
-        "tempo_str": tempo_str,
     })
 
     return frames
 
 # =============================================================
-# ANIMAÇÃO COM MATPLOTLIB
+# ANIMACAO COM MATPLOTLIB
 # =============================================================
 
 frames = dijkstra_frames(grafo, START, END)
@@ -182,7 +165,7 @@ COR_ARESTA_CAMINHO = "#c0392b"
 
 def draw_frame(frame_data):
     ax.clear()
-    ax.set_facecolor("#ffffff")
+    ax.set_facecolor("#0f1923")
     ax.set_xlim(-0.02, 1.02)
     ax.set_ylim(-0.02, 1.02)
     ax.axis("off")
@@ -209,12 +192,12 @@ def draw_frame(frame_data):
         ax.plot([x1, x2], [y1, y2], color=color, linewidth=lw,
                 zorder=zorder, solid_capstyle="round")
 
-        if edge in short_path or edge in active_edges:
-            mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-            ax.text(mx, my, f"{data['weight']:.0f}km",
-                    fontsize=6.5, color="#aaaaaa", ha="center", va="center", zorder=4,
-                    bbox=dict(boxstyle="round,pad=0.1", facecolor="#0f1923",
-                              edgecolor="none", alpha=0.7))
+        # CORRIGIDO: label de km exibido em TODAS as arestas
+        mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+        ax.text(mx, my, f"{data['weight']:.0f}km",
+                fontsize=6.5, color="#aaaaaa", ha="center", va="center", zorder=4,
+                bbox=dict(boxstyle="round,pad=0.1", facecolor="#0f1923",
+                          edgecolor="none", alpha=0.7))
 
     for city in G.nodes():
         x, y = pos[city]
