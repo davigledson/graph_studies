@@ -79,7 +79,7 @@ graph rota_litoral {
     "Pipa" -- "Nisia Floresta" [label="45km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
     "Nisia Floresta" -- "Natal" [label="30km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
     "Natal" -- "Extremoz" [label="20km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
-    "Natal" -- "Touros" [label="85km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
+    "Natal" -- "Touros" [label="90km" color="#C0392B" penwidth=3.0 fontcolor="#C0392B" fontsize=70]
     "Natal" -- "Mossoro" [label="277km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
     "Extremoz" -- "Touros" [label="80km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
     "Extremoz" -- "Mossoro" [label="250km" color="#000000" penwidth=0.8 fontcolor="#000000" fontsize=50]
