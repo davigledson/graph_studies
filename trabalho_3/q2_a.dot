@@ -1,0 +1,29 @@
+digraph at3 {
+    rankdir=LR
+    node [shape=circle, fontsize=10]
+    edge [fontsize=9]
+
+    1 -> 2  [label="Planejamento da campanha\n2 dias"]
+    1 -> 12 [label="Data de lançamento\n17 dias"]
+
+    2 -> 12 [label="Anúncio jornal: texto\n4 dias"]
+    2 -> 4  [label="Anúncio jornal: ilustração\n4 dias"]
+    2 -> 5  [label="Anúncio jornal: contrato\n3 dias"]
+    2 -> 6  [label="Cartaz: desenho\n8 dias"]
+    2 -> 7  [label="Cartaz: contrato\n3 dias"]
+    2 -> 8  [label="TV: script\n3 dias"]
+    2 -> 9  [label="TV: contrato filmagem\n4 dias"]
+    2 -> 10 [label="TV: contrato distribuição\n3 dias"]
+
+    4 -> 5  [label="Anúncio jornal: clichês\n2 dias"]
+    5 -> 11 [label="Anúncio jornal: envio\n1 dia"]
+
+    6 -> 7  [label="Cartaz: impressão\n1 dia"]
+    7 -> 11 [label="Cartaz: distribuição\n1 dia"]
+
+    8 -> 9  [label="Atividade fictícia\n0 dias", style=dashed, color=gray]
+    9 -> 10 [label="TV: produzir filme\n6 dias"]
+    10 -> 11 [label="TV: envio do filme\n1 dia"]
+
+    11 -> 12 [label="Organizar com imprensa\n4 dias"]
+}

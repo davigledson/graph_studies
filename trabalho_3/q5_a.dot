@@ -1,0 +1,15 @@
+digraph 5 {
+    rankdir = "LR"
+    node [shape = "circle"]
+
+    1 -> 2 [label = "A,10"]
+    1 -> 3 [label = "B,7"]
+    1 -> 7 [label = "C,16"]
+    2 -> 4 [label = "D,12"]
+    3 -> 4 [label = "E,5"]
+    3 -> 5 [label = "F,12"]
+    4 -> 5 [style = "dashed"]
+    4 -> 6 [label = "G,8"]
+    5 -> 6 [label = "H,10"]
+    6 -> 7 [label = "I,8"]
+}
